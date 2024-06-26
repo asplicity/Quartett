@@ -43,12 +43,14 @@
                     } else {
                         Karte = StapelBot.Substring(StapelBot.IndexOf(Wert), 2);
                     }
-                    StapelBot.Replace(Karte, "");
+                    StapelBot = StapelBot.Replace(Karte, "");
                     StapelPlayer += Karte;
                     Console.WriteLine($"Du hast jetzt die Karte {Karte} vom Bot bekommen");
+                } else {
+                    StapelBot += Stapel.Substring(0, 2);
+                    Console.WriteLine($"Der Bot hatte keine Karte mit diesen Wert ");
                 }
             }
-            
         }
     }
 }
