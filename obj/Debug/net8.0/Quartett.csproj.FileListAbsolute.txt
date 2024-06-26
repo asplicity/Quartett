@@ -1,0 +1,14 @@
+C:\Users\ticob\OneDrive\cs\Quartett\bin\Debug\net8.0\Quartett.exe
+C:\Users\ticob\OneDrive\cs\Quartett\bin\Debug\net8.0\Quartett.deps.json
+C:\Users\ticob\OneDrive\cs\Quartett\bin\Debug\net8.0\Quartett.runtimeconfig.json
+C:\Users\ticob\OneDrive\cs\Quartett\bin\Debug\net8.0\Quartett.dll
+C:\Users\ticob\OneDrive\cs\Quartett\bin\Debug\net8.0\Quartett.pdb
+C:\Users\ticob\OneDrive\cs\Quartett\obj\Debug\net8.0\Quartett.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ticob\OneDrive\cs\Quartett\obj\Debug\net8.0\Quartett.AssemblyInfoInputs.cache
+C:\Users\ticob\OneDrive\cs\Quartett\obj\Debug\net8.0\Quartett.AssemblyInfo.cs
+C:\Users\ticob\OneDrive\cs\Quartett\obj\Debug\net8.0\Quartett.csproj.CoreCompileInputs.cache
+C:\Users\ticob\OneDrive\cs\Quartett\obj\Debug\net8.0\Quartett.dll
+C:\Users\ticob\OneDrive\cs\Quartett\obj\Debug\net8.0\refint\Quartett.dll
+C:\Users\ticob\OneDrive\cs\Quartett\obj\Debug\net8.0\Quartett.pdb
+C:\Users\ticob\OneDrive\cs\Quartett\obj\Debug\net8.0\Quartett.genruntimeconfig.cache
+C:\Users\ticob\OneDrive\cs\Quartett\obj\Debug\net8.0\ref\Quartett.dll
