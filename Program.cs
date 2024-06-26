@@ -25,7 +25,28 @@
             }
             Stapel = Stapel.Replace(Karte, "");
         }
+        while (true)
+        {
+            Console.WriteLine($"Dein Stapel: {StapelPlayer} \nwelchen wert möchtest du nachfragen");
+            var Wert = Console.ReadLine() ?? String.Empty;
+            if(Wert.Length != 1) {
+                continue;
+            }
 
-
+            if(!StapelPlayer.Contains(Wert)){
+                Console.WriteLine("Hallo");
+            } else {
+                if(StapelBot.Contains(Wert)) {
+                    var Karte = "";
+                    if(Wert == "1" || Wert == "2" || Wert == "3" || Wert == "4") {
+                        Karte = StapelBot.Substring(StapelBot.IndexOf(Wert) - 1, 2);
+                    } else {
+                        Karte = StapelBot.Substring(StapelBot.IndexOf(Wert), 2);
+                    }
+                    StapelBot.Replace(Karte, "");
+                }
+            }
+            
+        }
     }
 }
