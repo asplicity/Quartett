@@ -34,7 +34,7 @@
             }
 
             if(!StapelPlayer.Contains(Wert)){
-                Console.WriteLine("Hallo");
+                Console.WriteLine("bitte gebe ein Wert an den du in deinem Deck hast");
             } else {
                 if(StapelBot.Contains(Wert)) {
                     var Karte = "";
@@ -44,6 +44,8 @@
                         Karte = StapelBot.Substring(StapelBot.IndexOf(Wert), 2);
                     }
                     StapelBot.Replace(Karte, "");
+                    StapelPlayer += Karte;
+                    Console.WriteLine($"Du hast jetzt die Karte {Karte} vom Bot bekommen");
                 }
             }
             
