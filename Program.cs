@@ -51,6 +51,8 @@
                     Console.WriteLine($"Der Bot hatte keine Karte mit diesen Wert ");
                 }
             }
+            
         }
     }
+    
 }
