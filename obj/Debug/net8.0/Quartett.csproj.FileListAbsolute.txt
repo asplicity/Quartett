@@ -12,3 +12,4 @@ C:\Users\ticob\OneDrive\cs\Quartett\obj\Debug\net8.0\refint\Quartett.dll
 C:\Users\ticob\OneDrive\cs\Quartett\obj\Debug\net8.0\Quartett.pdb
 C:\Users\ticob\OneDrive\cs\Quartett\obj\Debug\net8.0\Quartett.genruntimeconfig.cache
 C:\Users\ticob\OneDrive\cs\Quartett\obj\Debug\net8.0\ref\Quartett.dll
+C:\Users\ticob\OneDrive\cs\Quartett\obj\Debug\net8.0\Quartett.sourcelink.json
