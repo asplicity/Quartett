@@ -4,10 +4,10 @@ using System.Security.Cryptography;
 
 internal class Program {
     class Card {
-        public string Letter { get; }
+        public char Letter { get; }
         public string Number { get; }
 
-        public Card(string letter, string number) {
+        public Card(char letter, string number) {
             Letter = letter;
             Number = number;
         }
@@ -50,7 +50,7 @@ internal class Program {
         }
 
 
-        public void sortDeck() {
+        private void sortDeck() {
             int n = deck.Count();
             int i, j;
             Card temp;
@@ -79,15 +79,36 @@ internal class Program {
             }
             return output;
         }
+        public bool hasCard(char letter) {
+            sortDeck();
+            int low = 0,  high = deck.Count - 1;
+            while(low <= high) {
+                int mid = low + (high - low) / 2;
+
+                if(deck[mid].Letter == letter) {
+                    Shuffle();
+                    return true;
+                }
+                if(deck[mid].Letter < letter) {
+                    low = mid + 1;
+                } else{
+                    high = mid - 1;
+                }
+
+            }
+            Shuffle();
+            return false;
+
+        }
     }
 
     static void Main(string[] args) {
-        var alph = "ABCDDEFGH";
+        var alph = "ABCDDEFG";
         var num = "1234";
         Deck deck = new Deck(new List<Card>());
         foreach(var i in alph) {
             foreach(var j in num) {
-                Card card = new Card(i.ToString(), j.ToString());
+                Card card = new Card(i, j.ToString());
                 deck.add(card);
 
             }
@@ -95,7 +116,6 @@ internal class Program {
 
         deck.Shuffle();
         Console.WriteLine(deck.ToString());
-        deck.sortDeck();
-        Console.WriteLine(deck.ToString());
+        Console.WriteLine(deck.hasCard('H'));
     }
 }
