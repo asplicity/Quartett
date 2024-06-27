@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Microsoft.VisualBasic;
 
 internal class Program {
     class Card {
         public char Letter { get; }
-        public string Number { get; }
+        public char Number { get; }
 
-        public Card(char letter, string number) {
+        public Card(char letter, char number) {
             Letter = letter;
             Number = number;
         }
-        public int to_num() {
+        public int to_num(int variant) {
             string alph = "ABCDEFGH";
-            return int.Parse(alph.IndexOf(Letter) + "" + Number);
+            return variant == 0 ? int.Parse(alph.IndexOf(Letter) + "" + Number) : int.Parse(Number + "" + alph.IndexOf(Letter));
         }
         public override string ToString()
         {
-            return Letter + Number;
+            return Letter.ToString() + Number.ToString();
         }
 
     }
@@ -42,15 +43,17 @@ internal class Program {
         public void add(Card card) {
             deck.Add(card);
         }
-        public void remove(Card card) {
-            deck.Remove(card);
+        public void remove(char Card) {
+            var pos = findCard(Card, Card == 1 || Card == 2 || Card == 3 || Card == 4 ? 1 : 0);
         }
         public Card Draw() {
-            return deck[0];
+            Card card = deck[0];
+            deck.RemoveAt(0);
+            return card;
         }
 
 
-        private void sortDeck() {
+        private void sortDeck(int variant) {
             int n = deck.Count();
             int i, j;
             Card temp;
@@ -58,7 +61,7 @@ internal class Program {
             for (i = 0; i < n - 1; i++) {
                 swapped = false;
                 for (j = 0; j < n - i - 1; j++) {
-                    if (deck[j].to_num() > deck[j + 1].to_num()) {
+                    if (deck[j].to_num(variant) > deck[j + 1].to_num(variant)) {
                         temp = deck[j];
                         deck[j] = deck[j + 1];
                         deck[j + 1] = temp;
@@ -79,43 +82,41 @@ internal class Program {
             }
             return output;
         }
-        public bool hasCard(char letter) {
-            sortDeck();
+        public int findCard(char letter, int variant) {
+            sortDeck(variant);
             int low = 0,  high = deck.Count - 1;
             while(low <= high) {
                 int mid = low + (high - low) / 2;
 
-                if(deck[mid].Letter == letter) {
-                    Shuffle();
-                    return true;
+                if((variant == 0 ? deck[mid].Letter : deck[mid].Number) == letter) {
+                    return mid;
                 }
-                if(deck[mid].Letter < letter) {
+                if((variant == 0 ? deck[mid].Letter : deck[mid].Number) < letter) {
                     low = mid + 1;
                 } else{
                     high = mid - 1;
                 }
 
             }
-            Shuffle();
-            return false;
+            return -1;
 
         }
     }
 
     static void Main(string[] args) {
-        var alph = "ABCDDEFG";
+        var alph = "ABCDDEFGH";
         var num = "1234";
         Deck deck = new Deck(new List<Card>());
         foreach(var i in alph) {
             foreach(var j in num) {
-                Card card = new Card(i, j.ToString());
+                Card card = new Card(i, j);
                 deck.add(card);
 
             }
         }
 
         deck.Shuffle();
+        Console.WriteLine(deck.findCard('1', 1));
         Console.WriteLine(deck.ToString());
-        Console.WriteLine(deck.hasCard('H'));
     }
 }
