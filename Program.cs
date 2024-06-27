@@ -44,7 +44,9 @@ internal class Program {
             deck.Add(card);
         }
         public void remove(char Card) {
-            var pos = findCard(Card, Card == 1 || Card == 2 || Card == 3 || Card == 4 ? 1 : 0);
+            var variant = findCard(Card, Card == 1 || Card == 2 || Card == 3 || Card == 4 ? 1 : 0);
+            var pos = findCard(Card, variant);
+            deck.RemoveAt(pos);
         }
         public Card Draw() {
             Card card = deck[0];
@@ -104,7 +106,7 @@ internal class Program {
     }
 
     static void Main(string[] args) {
-        var alph = "ABCDDEFGH";
+        var alph = "ABCDEFGH";
         var num = "1234";
         Deck deck = new Deck(new List<Card>());
         foreach(var i in alph) {
@@ -116,7 +118,7 @@ internal class Program {
         }
 
         deck.Shuffle();
-        Console.WriteLine(deck.findCard('1', 1));
+        Console.WriteLine(deck.findCard('D', 0));
         Console.WriteLine(deck.ToString());
     }
 }
