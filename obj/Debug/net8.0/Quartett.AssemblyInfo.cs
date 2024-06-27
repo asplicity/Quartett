@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Quartett")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c2b978c9f98d8b8fe3220e076c8063682ed89a4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cbc6063393f15e3ff67143b1bda62bc824bdd2b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Quartett")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Quartett")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
