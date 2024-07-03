@@ -195,20 +195,23 @@ internal class Program
             var input = Console.ReadLine();
             char Wert = string.IsNullOrWhiteSpace(input) ? '1' : input[0];
             int variant = "1234".Contains(Wert) ? 1 : 0;
-
             Card Karte = bot.remove(Wert, variant);
-            if (Karte != null)
-            {
-                player.add(Karte);
-                Console.WriteLine($"Der Bot hatte die Karte: {Karte}");
+            if (player.findCard(Wert, variant) != -1) {
+            
+                if (Karte != null)
+                {
+                    player.add(Karte);
+                    Console.WriteLine($"Der Bot hatte die Karte: {Karte}");
+                }
+                else
+                {
+                    Card newCard = deck.Draw();
+                    bot.add(newCard);
+                    Console.WriteLine("Der Bot hatte die Karte nicht, er hat eine Karte gezogen");
+                }
+            } else {
+                Console.WriteLine("Du hast die Karte nicht wähle einen anderen Wert");
             }
-            else
-            {
-                Card newCard = deck.Draw();
-                bot.add(newCard);
-                Console.WriteLine("Der Bot hatte die Karte nicht, er hat eine Karte gezogen");
-            }
-
             Card WKarte = bot.Choose();
             Random rnd = new Random();
             var Wahl = rnd.Next(2) == 0 ? WKarte.Letter : WKarte.Number;
