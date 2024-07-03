@@ -20,6 +20,7 @@ internal class Program {
     }
 
     class Deck {
+        #pragma warning disable
         private List<Card> deck;
 
         public Deck(List<Card> cards) {
@@ -130,6 +131,7 @@ internal class Program {
         }
     }
 
+    #pragma warning enable
     static void Main(string[] args) {
         var alph = "ABCDEFGH";
         var num = "1234";
