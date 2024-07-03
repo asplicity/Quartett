@@ -75,7 +75,7 @@ internal class Program {
             return card;
         }
 
-        public char has_Quartett() {
+        public char has_Quartett() { //who the fuck wrote this shit!
             foreach (var letter in "ABCDEFGH".ToCharArray()) {
                 int count = 0;
                 foreach (var card in deck) {
